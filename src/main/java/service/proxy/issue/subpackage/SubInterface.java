@@ -1,5 +1,6 @@
 package service.proxy.issue.subpackage;
 
+import io.vertx.codegen.annotations.Fluent;
 import io.vertx.codegen.annotations.ProxyGen;
 import io.vertx.codegen.annotations.VertxGen;
 import io.vertx.core.AsyncResult;
@@ -12,5 +13,6 @@ import service.proxy.issue.TestInterface;
 public interface SubInterface {
 
   // This has an argument of TestInterface and this is not able to auto generate the proxy class
+  @Fluent
   SubInterface interfaceWithDependentProxy(JsonObject input, Handler<AsyncResult<TestInterface>> testInterfaceHandler);
 }
